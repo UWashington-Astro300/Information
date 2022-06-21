@@ -1,0 +1,249 @@
+\input{Header.tex}
+
+\setlength{\parskip}{0.5em}   % Space between paragraphs
+
+\newenvironment{myitemize}
+{ \vspace{-\topsep}  
+  \begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}     }
+{ \end{itemize}
+  \vspace{-\topsep}
+} 
+
+\setlength{\abovedisplayskip}{-40pt}
+\setlength{\belowdisplayskip}{-40pt}
+
+\newcommand{\DEC}{\texttt{DEC}}
+\newcommand{\RA}{\texttt{RA}}
+
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+
+\begin{document}
+
+\small
+
+%\begin{minipage}{1.0\textwidth}
+\begin{multicols*}{2}
+
+\section*{Astronomical Coordinates}
+
+\textbf{Declination} (\DEC\ or $\delta$) is equivalent to terrestrial
+latitude. Points north of the celestial
+equator have positive declinations, while those to the south have
+negative declinations. The sign is customarily included even if it is
+positive. Declination is expressed in degrees [$\,^{\circ}\,$],
+arc-minutes [$\,\prime\,$], and arc-seconds [$\,\prime\prime\,$].
+
+1$^{\circ}$ = 60$^{\prime}$ = 3600$^{\prime\prime}$
+
+Example: $\rm{\DEC}$ = +23$^{\circ}$ 52$^{\prime}$ 12.12$^{\prime\prime}$
+
+\begin{myitemize}
+\item The celestial equator has a $\rm{\DEC}$ = 0$^{\circ}$
+\item The celestial north pole has a $\rm{\DEC}$ = +90$^{\circ}$
+\item The celestial south pole has a $\rm{\DEC}$ = -90$^{\circ}$
+\end{myitemize}
+
+\textbf{Right Ascension} (\RA\ or $\alpha$) is roughly equivalent to
+terrestrial longitude. The units of right ascension are hours, minutes,
+seconds [hms].
+
+1 hour in \RA\ = 15$^{\circ}$, 24 hours in \RA\ = 360$^{\circ}$.
+
+Example: $\rm{\RA}$ = 20h 23m 12.12s
+
+The zero-point for right ascension is the position of the Sun on the
+first day of spring (Vernal Equinox). \RA\ is measured eastward from the
+Vernal equinox. The position of the Sun at the beginning of each season
+is given in the table below. 
+
+{\centering
+\includegraphics[width=0.45\textwidth]{./Images/SunPos.png}
+\par
+}
+
+\begin{tabular}{lccc}
+\toprule
+Season           & Approx Date   & $\rm{\RA}$ & $\rm{\DEC}$ \\
+\midrule
+Vernal Equinox   & Mar 20 & 0h   & 0$^{\circ}$ \\
+Summer Solstice  & Jun 21 & 6h   & +23.4$^{\circ}$ \\
+Autumnal Equinox & Sep 23 & 12h  & 0$^{\circ}$ \\
+Winter Solstice  & Dec 21 & 18h  & -23.4$^{\circ}$ \\
+\bottomrule
+\end{tabular}
+
+As you can see, the Sun moves about 1h in \RA\ every 2 weeks.
+
+\textbf{Julian Date} (JD) The elapsed time since Jan 1, 4713 BCE at noon. Notice the zero point is noon, not midnight. Measured in seconds. Sept 25, 2019 at noon (JD = 2458752.0)
+
+\section*{Celestial Sphere}
+
+{\centering
+\includegraphics[width=0.45\textwidth]{./Images/horizon.pdf}
+\par
+}
+
+\textbf{Meridian}. The meridian is the great circle running from due
+north to south, passing through the celestial pole. The moment an object
+is on the meridian, that object will have a right ascension (\RA) equal to the
+Local Sidereal Time (LST).
+
+LST = \RA\ of the meridian. Since the zero-point of right ascension
+is a fixed point in space, the value of the LST will constantly be
+changing (the Earth is rotating), and will be depend on your location on
+Earth.
+
+\textbf{Midnight} The LST at any location at local midnight will be the
+\RA\ of the Sun + 12 h
+
+\textbf{Zenith}. This is the point on the celestial sphere directly
+above the observer's location. It is the point on the meridian with the
+highest altitude. An object at the zenith will have the coordinates:
+\RA\ = LST, \DEC\ = observer's latitude ($\theta$).
+
+\textbf{Visibility}. The ability of an observer to see an object in the
+sky depends on the observer's latitude and longitude ($\theta, \ \phi$),
+the time of the observation (LST), and the coordinates of the object
+(\RA, \DEC).
+
+Some objects may always be above the observer's horizon. These objects
+are called \textbf{circumpolar} objects. Of course you may not be able
+to see these objects if the Sun is in the sky. Conversely, some objects
+may never rise above the observer's horizon.
+
+\vspace{5mm}
+
+\footnotesize
+\begin{tabular}{lcc}
+\toprule
+Visibility & Northern Observer & Southern Observer \\
+& ($\theta>0$) & ($\theta<0$) \\
+\midrule
+Circumpolar & $\rm{\DEC}\,>\,90^{\circ}-\theta$ & $\rm{\DEC}\,<\,-90^{\circ}-\theta$ \\
+Never Visible & $\rm{\DEC}\,<\,-90^{\circ}+\theta$ &
+$\rm{\DEC}\,>\,90^{\circ}+\theta$ \\ \\
+Best Visibility & \multicolumn{2}{c}{$\rm{\RA}\ =\ $ LST at midnight} \\
+\bottomrule
+\end{tabular}
+\small
+
+\columnbreak
+
+\section*{Orbits}
+
+Kepler's first law says: {\it The orbit of every planet is an ellipse
+with the sun at one focus}. The semi-major axis (\textbf{a}) and the
+eccentricity (\textbf{ecc}) parametrize the size and shape of the ellipse.
+
+For a closed elliptical orbit (orbits gravitationally bound to the Sun),
+$\rm{ecc} = \sqrt{1 - {b^2}/{a^2}}$, where \textbf{a} and \textbf{b} are the semi-major and semi-minor axes (see drawing below). 
+
+When a = b, ecc = 0 (a circle), and when a $>>$ b, ecc
+approaches 1. When ecc = 1, the orbit is a parabolic orbit (just bound).
+When ecc $>$ 1 the orbit is a hyperbolic orbit (unbound).
+
+{\centering
+\includegraphics[width=0.40\textwidth]{./Images/Orbit_Sun.png}
+\par
+}
+
+The point in the object's orbit where it is closest to the Sun is called
+the \textbf{perihelion} (periapsis). The farthest point in the orbit is
+called the \textbf{aphelion} (apoapsis). Inspecting the diagram at the
+right, you can see:
+
+perihelion distance $= \rm{a}\ (1-\rm{ecc})$\\[5pt]
+aphelion distance $= \rm{a}\ (1+\rm{ecc})$
+
+\section*{Star Stuff}
+
+\textbf{Brightness} The brightness of a star is a measure of the flux (F) received from the star. The flux depends on the star's intrinsic luminosity (L) and distance (d).
+
+\[
+\textrm{F} = \frac{L}{4\pi d^2}
+\]
+
+\textbf{Apparent magnitude} (m) is a measure of the relative brightness of a star. The magnitude scale is an inverse logarithmic relation, where a difference of 1.0 in magnitude corresponds to a brightness ratio 2.512. The brighter an object appears, the \textbf{lower} its magnitude. 
+
+\[
+m_{1}-m_{2}=-2.5\log _{{10}}\left({\frac  {F_{1}}{F_{2}}}\right)
+\]
+
+\textbf{Absolute magnitude} (M) is defined to be equal to the apparent magnitude of a star if it were viewed from a distance of exactly 10.0 parsecs (32.6 light-years). The Sun has an absolute magnitude of M$_{Sun}$ = +4.83.
+
+\textbf{Distance Modulus} ($\mu$) is a relation between a star's apparent magnitude, absolute magnitude, and distance. 
+
+\[
+{\displaystyle \mu =m-M=5\log _{10}(d)-5=5\log _{10}\left({\frac {d}{10\,\mathrm {pc} }}\right)}
+\]
+
+\textbf{Color Index} A simple numerical expression that determines the color of an object. The smaller the color index, the more blue (or hotter) the object is, the larger the color index, the more red (or cooler) the object is. 
+
+To measure the index, one observes the magnitude of an object successively through two different filters, such as B and V. The difference in magnitudes found with these filters is called the B-V color index.
+
+The table below give the typical Absolute magnitude (V filter: M$_V$), and the color index (various filters) for stars on the main sequence.
+
+%\footnotesize
+\begin{center}
+\begin{tabular}{lrrrrr}
+\toprule
+Class &      M$_V$ & U-B & B-V & V-R & V-I \\
+\midrule
+  O5V &   -5.2 & -1.19 &   -0.32 & -0.14 &   -0.32 \\
+  O8V &   -4.3 & -1.14 &   -0.32 & -0.14 &   -0.32 \\
+  B0V &   -3.7 & -1.07 &   -0.30 & -0.13 &   -0.30 \\
+  B3V &   -1.4 & -0.75 &   -0.18 & -0.08 &   -0.20 \\
+  B6V &   -1.0 & -0.50 &   -0.14 & -0.06 &   -0.13 \\
+  B8V &   -0.25 & -0.30 &  -0.11 & -0.04 &   -0.09 \\
+  A0V &    0.8 &  0.00 &    0.00 &  0.00 &    0.00 \\
+  A5V &    1.8 &  0.08 &    0.19 &  0.13 &    0.27 \\
+  F0V &    2.4 &  0.06 &    0.32 &  0.16 &    0.33 \\
+  F5V &    3.3 & -0.03 &    0.41 &  0.27 &    0.53 \\
+  G0V &    4.2 &  0.05 &    0.59 &  0.33 &    0.66 \\
+  Sun &    4.83 &  0.14 &    0.65 &  0.36 &    0.72 \\
+  G5V &    4.93 &  0.13 &   0.69 &  0.37 &    0.73 \\
+  K0V &    5.9 &  0.46 &    0.84 &  0.48 &    0.88 \\
+  K5V &    7.5 &  0.91 &    1.08 &  0.66 &    1.33 \\
+  K7V &    8.3 &       &    1.32 &  0.83 &    1.60 \\
+  M0V &    8.9 &       &    1.41 &  0.89 &    1.80 \\
+  M2V &   11.2 &       &    1.50 &  1.00 &    2.2 \\
+  M4V &   12.7 &       &    1.60 &  1.20 &    2.9 \\
+  M6V &   16.5 &       &         &  1.90 &    4.1 \\
+\bottomrule
+\end{tabular}
+\end{center}
+%\small
+
+
+
+
+
+
+\end{multicols*}
+%\end{minipage}
+
+\end{document}
+
+\begin{center}
+\begin{tabular}{lrrrrr}
+\toprule
+Class & B-V   & U-B   & V-R   & R-I   & Teff (K) \\
+\midrule
+O5V   & -0.33 & -1.19 & -0.15 & -0.32 & 42,000   \\
+B0V   & -0.30 & -1.08 & -0.13 & -0.29 & 30,000   \\
+A0V   & -0.02 & -0.02 & 0.02  & -0.02 & 9,790    \\
+F0V   & 0.30  & 0.03  & 0.30  & 0.17  & 7,300    \\
+G0V   & 0.58  & 0.06  & 0.50  & 0.31  & 5,940    \\
+K0V   & 0.81  & 0.45  & 0.64  & 0.42  & 5,150    \\
+M0V   & 1.40  & 1.22  & 1.28  & 0.91  & 3,840    \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+{\centering
+\includegraphics[width=0.70\textwidth]{./Images/StarColor.png}
+\par
+}
