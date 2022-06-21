@@ -22,4 +22,4 @@ Example: $\delta$ = +23$^{\circ}$ 52$^{\prime}$ 12.12$^{\prime\prime}$
 - The celestial north pole has a $\delta = +90^{\circ}$
 - The celestial south pole has a $\delta = -90^{\circ}$
 
-![Image](./images/SunPos.png | width=100)
+![Image](./images/SunPos.png)
