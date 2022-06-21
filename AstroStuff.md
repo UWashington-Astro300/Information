@@ -1,3 +1,8 @@
+---
+layout: default
+title: Astro Stuff
+---
+
 # Astro Stuff
 
 ## Astronomical Coordinates
