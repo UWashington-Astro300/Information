@@ -247,3 +247,5 @@ M0V   & 1.40  & 1.22  & 1.28  & 0.91  & 3,840    \\
 \includegraphics[width=0.70\textwidth]{./Images/StarColor.png}
 \par
 }
+
+% Just a comment at the end.
